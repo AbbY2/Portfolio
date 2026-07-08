@@ -1,160 +1,150 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Amit Tiwari — Software Engineer & 3D Web Developer</title>
+    <title>Amit Tiwari | Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Amit Tiwari — Microsoft Certified .NET Developer & Software Engineer. 14+ years building premium web & mobile applications.">
-    <meta name="keywords" content="Amit Tiwari, portfolio, .NET developer, software engineer, web developer, Angular, 3D website, Microsoft certified">
+    <meta name="description" content="Amit Tiwari — Full-stack .NET developer with 14+ years of experience transforming ideas into digital reality.">
+    <meta name="keywords" content="Amit Tiwari, portfolio, .NET developer, software engineer, web developer, Angular">
     <meta name="author" content="Amit Tiwari">
-    <meta name="theme-color" content="#6d5dfc">
+    <meta name="theme-color" content="#f13024">
 
-    <meta property="og:title" content="Amit Tiwari — Software Engineer & 3D Web Developer">
-    <meta property="og:description" content="Microsoft Certified .NET Developer with 14+ years of experience.">
+    <meta property="og:title" content="Amit Tiwari | Portfolio">
+    <meta property="og:description" content="Full-stack .NET developer with 14+ years of experience.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="img/profile.png">
 
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236d5dfc'/%3E%3Cstop offset='1' stop-color='%23b14dff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='52' font-weight='bold' fill='white' text-anchor='middle'%3EAT%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23f13024'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='52' font-weight='bold' fill='white' text-anchor='middle'%3EAT%3C/text%3E%3C/svg%3E">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
-    <link href="css/premium.css" rel="stylesheet">
+    <link href="css/v2.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="pl-inner">
-            <div class="pl-logo">AMIT TIWARI · PORTFOLIO</div>
-            <div class="pl-bar"><span id="plBar"></span></div>
-            <div class="pl-pct" id="plPct">0%</div>
-        </div>
-    </div>
-
+    <div class="preloader" id="preloader"><div class="pl-ring"></div></div>
     <div class="progress-top" id="progressTop"></div>
 
-    <!-- 3D background canvas + tint -->
-    <canvas id="three-canvas" aria-hidden="true"></canvas>
-    <div class="bg-tint" aria-hidden="true"></div>
+    <div class="bg-aurora" aria-hidden="true"></div>
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
 
-    <!-- Navbar -->
-    <nav class="nav" id="nav">
-        <div class="inner">
-            <a href="#home" class="brand"><span class="logo">AT</span> Amit Tiwari</a>
-            <div class="nav-links" id="navLinks">
-                <a href="#home" class="active">Home</a>
-                <a href="#about">About</a>
-                <a href="#skill">Skills</a>
-                <a href="#service">Services</a>
-                <a href="#project">Projects</a>
-                <a href="#testimonial">Reviews</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="nav-right">
-                <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
-                <button class="icon-btn nav-toggle" id="navToggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
-            </div>
-        </div>
+    <!-- Cursor spotlight + custom trailing cursor -->
+    <div class="spotlight" id="spotlight" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+    <!-- Page-transition curtain -->
+    <div class="page-transition" id="pageFx" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+
+    <!-- Left socials rail -->
+    <div class="social-rail" aria-hidden="false">
+        <a href="https://www.linkedin.com/in/amit-tiwari-71b07919/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://destinyofamit.blogspot.com/" target="_blank" aria-label="Blog"><i class="fab fa-blogger-b"></i></a>
+        <a href="mailto:destinyofamit@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+	
+    <!-- Brand (top-left) -->
+    <a href="#home" class="brand-float"><span class="logo">AT</span><span class="bf-name">Amit Tiwari<span class="logo-dot">.</span></span></a>
+
+    <!-- Vertical dock menu (right-center) -->
+    <nav class="dock" id="dock" aria-label="Primary navigation">
+        <a href="#home" class="dock-btn active" data-tip="Home" aria-label="Home"><i class="fas fa-house"></i></a>
+        <a href="#about" class="dock-btn" data-tip="About" aria-label="About"><i class="fas fa-user"></i></a>
+        <a href="#service" class="dock-btn" data-tip="Services" aria-label="Services"><i class="fas fa-shapes"></i></a>
+        <a href="#work" class="dock-btn" data-tip="Work" aria-label="Work"><i class="fas fa-table-columns"></i></a>
+        <a href="#testimonial" class="dock-btn" data-tip="Reviews" aria-label="Testimonials"><i class="fas fa-comment-dots"></i></a>
+        <a href="#contact" class="dock-btn" data-tip="Contact" aria-label="Contact"><i class="fas fa-envelope"></i></a>
     </nav>
 
-    <!-- HERO — sticky 3D scroll -->
-    <div class="hero-wrap" id="home">
-        <header class="hero">
-            <div class="container">
-                <div class="hero-inner">
-                    <span class="hero-pill reveal"><span class="dot"></span> Available for freelance work</span>
-                    <h1 class="reveal" data-delay="1">Hi, I'm <span class="gradient-text">Amit Tiwari</span></h1>
-                    <div class="role reveal" data-delay="2">&gt; <span class="typed" id="typed"></span><span class="typed-cursor"></span></div>
-                    <p class="intro reveal" data-delay="3">Microsoft Certified .NET Developer crafting fast, elegant web &amp; mobile applications. 14+ years turning complex ideas into clean, reliable software — now with immersive 3D experiences.</p>
-                    <div class="hero-actions reveal" data-delay="3">
-                        <a href="Amit_Tiwari_CV.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
-                        <a href="#contact" class="btn btn-neu"><i class="fas fa-paper-plane"></i> Let's talk</a>
-                    </div>
-                    <div class="hero-socials reveal" data-delay="4">
-                        <a href="https://www.linkedin.com/in/amit-tiwari-71b07919/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://destinyofamit.blogspot.com/" target="_blank" aria-label="Blog"><i class="fab fa-blogger-b"></i></a>
-                        <a href="mailto:destinyofamit@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
+    <!-- Hero -->
+    <header class="hero page active" id="home">
+        <div class="container">
+            <div class="hero-text">
+                <span class="hero-eyebrow reveal"><span class="dot"></span> Hi, I'm Amit Tiwari — <span class="accent" id="typed" style="font-weight:600;"></span></span>
+                <h1 class="reveal" data-delay="1">Transforming Ideas<br>Into <span class="accent">Digital Reality</span></h1>
+                <p class="lead reveal" data-delay="2">Microsoft Certified .NET developer with 14+ years of experience building fast, elegant web &amp; mobile applications — turning complex problems into clean, reliable software.</p>
+                <div class="hero-actions reveal" data-delay="3">
+                    <a href="#work" class="badge-spin" aria-label="View my work">
+                        <svg viewBox="0 0 200 200">
+                            <defs><path id="circlePath" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"></path></defs>
+                            <text><textPath href="#circlePath" xlink:href="#circlePath">• VIEW MY WORK • VIEW MY WORK </textPath></text>
+                        </svg>
+                        <span class="badge-core"><span><i class="fas fa-arrow-right"></i></span></span>
+                    </a>
+                    <a href="Amit_Tiwari_CV.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
+                    <a href="#contact" class="btn btn-ghost"><i class="fas fa-paper-plane"></i> Contact</a>
                 </div>
             </div>
-            <div class="scroll-cue"><span class="mouse"></span> Scroll to explore</div>
-        </header>
-    </div>
-
-    <!-- Marquee -->
-    <div class="marquee" aria-hidden="true">
-        <div class="marquee-track">
-            <span>.NET Core</span><span>Angular</span><span>JavaScript</span><span>Azure</span><span>MS SQL</span><span>.NET MAUI</span><span>Web Development</span>
-            <span>.NET Core</span><span>Angular</span><span>JavaScript</span><span>Azure</span><span>MS SQL</span><span>.NET MAUI</span><span>Web Development</span>
+            <div class="hero-visual reveal right" data-delay="2">
+                <div class="hero-photo">
+                    <span class="halo"></span>
+                    <span class="ringline"></span>
+                    <img src="img/profile.png" alt="Amit Tiwari">
+                    <div class="hero-float f1"><i class="fab fa-microsoft"></i> Certified Pro</div>
+                    <div class="hero-float f2"><i class="fas fa-star"></i> 14+ Years</div>
+                </div>
+            </div>
         </div>
-    </div>
+        <div class="scroll-cue"><span class="mouse"></span> Scroll</div>
+    </header>
 
     <!-- About -->
-    <section class="section" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="reveal left">
+    <section class="section page" id="about">
+        <div class="about2-photo" aria-hidden="true"><img src="img/profile.png" alt="Amit Tiwari"></div>
+        <div class="container about2">
+            <div class="about2-grid">
+                <div class="about2-main reveal left">
                     <span class="eyebrow">About me</span>
-                    <div class="exp-badge">
-                        <span class="num gradient-text">14</span>
-                        <h3 class="section-title" style="font-size:1.7rem;margin:0;">Years building software for agencies, start-ups &amp; enterprises</h3>
+                    <h2 class="section-title about2-head">Clean <span class="accent">code</span> births<br>magnificent products.</h2>
+                    <p class="section-lead">14 years ago I started building software. Since then I've delivered for an advertising agency, a start-up, a large corporation, and a digital product studio — turning complex problems into clean, reliable products.</p>
+                    <div class="about2-stats">
+                        <div class="st"><div class="n"><span class="counter" data-target="14">0</span></div><div class="l">Years of<br>Experience</div></div>
+                        <div class="st"><div class="n"><span class="counter" data-target="6">0</span>+</div><div class="l">Featured<br>Projects</div></div>
+                        <div class="st"><div class="n"><span class="counter" data-target="4">0</span></div><div class="l">MS<br>Certifications</div></div>
+                        <div class="st"><div class="n"><span class="counter" data-target="10">0</span>+</div><div class="l">Core<br>Technologies</div></div>
                     </div>
-                    <p class="section-lead">I've had the privilege of building software for an advertising agency, a start-up, a huge corporation, and a digital product studio — delivering results that exceed expectations.</p>
-                    <ul class="about-checks">
-                        <li><i class="fas fa-circle-check"></i> Affordable, transparent pricing</li>
-                        <li><i class="fas fa-circle-check"></i> High-quality, maintainable products</li>
-                        <li><i class="fas fa-circle-check"></i> On-time project delivery, every time</li>
-                    </ul>
                 </div>
-                <div class="reveal right about-visual">
-                    <div class="about-photo">
-                        <span class="ap-orbit"></span>
-                        <span class="ap-orb"></span>
-                        <div class="ap-frame">
-                            <img src="img/profile1.png" alt="Amit Tiwari">
+                <div class="about2-panel reveal right">
+                    <div class="about2-tabs">
+                        <button class="tab-btn active" data-tab="sk-skills">Skills</button>
+                        <button class="tab-btn" data-tab="sk-exp">Experience</button>
+                        <button class="tab-btn" data-tab="sk-cert">Certifications</button>
+                    </div>
+                    <div class="tab-panel active" id="sk-skills">
+                        <div class="skillrow"><span class="skillcat">Web &amp; Frontend</span><span class="dash">—</span>
+                            <span class="techs">
+                                <span class="chip" title="HTML5"><i class="fab fa-html5"></i></span>
+                                <span class="chip" title="CSS3"><i class="fab fa-css3-alt"></i></span>
+                                <span class="chip" title="JavaScript"><i class="fab fa-js"></i></span>
+                                <span class="chip" title="Angular"><i class="fab fa-angular"></i></span>
+                                <span class="chip" title="React"><i class="fab fa-react"></i></span>
+                                <span class="chip" title="WordPress"><i class="fab fa-wordpress"></i></span>
+                            </span>
                         </div>
-                        <div class="ap-chip ac1"><i class="fas fa-code"></i> Clean Code</div>
-						<!-- <div class="ap-chip ac2"><i class="fas fa-code"></i>+14 Years of Experience</div> -->
-                        <div class="ap-chip ac2"><i class="fas fa-rocket"></i> Fast Delivery</div>
+                        <div class="skillrow"><span class="skillcat">.NET &amp; Backend</span><span class="dash">—</span>
+                            <span class="techs">
+                                <span class="chip" title=".NET Core"><i class="fab fa-microsoft"></i></span>
+                                <span class="chip" title=".NET MAUI"><i class="fas fa-mobile-screen"></i></span>
+                                <span class="chip" title="MS SQL"><i class="fas fa-database"></i></span>
+                                <span class="chip" title="Azure"><i class="fas fa-cloud"></i></span>
+                            </span>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section class="section" id="skill">
-        <div class="container">
-            <div class="skills-grid">
-                <div class="reveal left">
-                    <span class="eyebrow">Expertise</span>
-                    <h2 class="section-title">Skills &amp; Experience</h2>
-                    <p class="section-lead" style="margin-bottom:32px;">Microsoft Certified Professional .NET Developer with a passion for software development — especially agile practices such as Test-Driven Development — and in-depth knowledge of the .NET platform.</p>
-                    <div class="skill"><div class="skill-head"><span>HTML &amp; CSS</span><span>95%</span></div><div class="bar"><span data-w="95"></span></div></div>
-                    <div class="skill"><div class="skill-head"><span>JavaScript</span><span>90%</span></div><div class="bar"><span data-w="90"></span></div></div>
-                    <div class="skill"><div class="skill-head"><span>.NET Core</span><span>90%</span></div><div class="bar"><span data-w="90"></span></div></div>
-                    <div class="skill"><div class="skill-head"><span>Angular</span><span>95%</span></div><div class="bar"><span data-w="95"></span></div></div>
-                    <div class="skill"><div class="skill-head"><span>.NET MAUI</span><span>85%</span></div><div class="bar"><span data-w="85"></span></div></div>
-                </div>
-                <div class="reveal right">
-                    <div class="tabs neu">
-                        <button class="tab-btn active" data-tab="exp">Experience</button>
-                        <button class="tab-btn" data-tab="cert">Certifications</button>
+                    <div class="tab-panel" id="sk-exp">
+                        <div class="tl"><div class="tl-when">2016 — Present</div><h4>Sr Software Engineer</h4><div class="tl-where">Allscripts</div></div>
+                        <div class="tl"><div class="tl-when">2014 — 2016</div><h4>Software Developer</h4><div class="tl-where">Xtreem Cyber Security LLP</div></div>
+                        <div class="tl"><div class="tl-when">2012 — 2014</div><h4>Jr. Software Engineer</h4><div class="tl-where">LUMIUM</div></div>
                     </div>
-                    <div class="tab-panel active" id="exp">
-                        <div class="timeline-item neu"><h4>Sr Software Engineer</h4><div class="when">2016 — Present</div><div class="where">Allscripts</div></div>
-                        <div class="timeline-item neu"><h4>Software Developer</h4><div class="when">2014 — 2016</div><div class="where">Xtreem Cyber Security LLP</div></div>
-                        <div class="timeline-item neu"><h4>Jr. Software Engineer</h4><div class="when">2012 — 2014</div><div class="where">LUMIUM</div></div>
-                    </div>
-                    <div class="tab-panel" id="cert">
-                        <div class="timeline-item neu"><h4>Programming in HTML5 with JavaScript &amp; CSS3</h4><div class="where">Microsoft</div></div>
-                        <div class="timeline-item neu"><h4>MCPS: Microsoft Certified Professional</h4><div class="where">Microsoft</div></div>
-                        <div class="timeline-item neu"><h4>MCSD: Web Applications</h4><div class="where">Microsoft</div></div>
-                        <div class="timeline-item neu"><h4>MTA: Software Development Fundamentals</h4><div class="where">Microsoft</div></div>
+                    <div class="tab-panel" id="sk-cert">
+                        <div class="tl"><h4>Programming in HTML5 with JavaScript &amp; CSS3</h4><div class="tl-where">Microsoft</div></div>
+                        <div class="tl"><h4>MCPS: Microsoft Certified Professional</h4><div class="tl-where">Microsoft</div></div>
+                        <div class="tl"><h4>MCSD: Web Applications</h4><div class="tl-where">Microsoft</div></div>
+                        <div class="tl"><h4>MTA: Software Development Fundamentals</h4><div class="tl-where">Microsoft</div></div>
                     </div>
                 </div>
             </div>
@@ -162,7 +152,7 @@
     </section>
 
     <!-- Services -->
-    <section class="section" id="service">
+    <section class="section page" id="service">
         <div class="container">
             <div class="center-head reveal">
                 <span class="eyebrow">What I do</span>
@@ -170,107 +160,133 @@
                 <p class="section-lead">End-to-end product help, from idea to launch.</p>
             </div>
             <div class="services-grid">
-                <div class="service neu reveal" data-delay="1"><div class="ico"><i class="fas fa-laptop-code"></i></div><h3>Web Development</h3><p>Professional, user-friendly websites that showcase your brand and help you achieve your online goals — built to perform and scale.</p></div>
-                <div class="service neu reveal" data-delay="2"><div class="ico"><i class="fas fa-mobile-screen-button"></i></div><h3>Mobile Apps</h3><p>Sleek, intuitive mobile experiences. Let's transform your idea into a stunning, reliable cross-platform application.</p></div>
-                <div class="service neu reveal" data-delay="1"><div class="ico"><i class="fas fa-cube"></i></div><h3>3D &amp; Interactive Web</h3><p>Immersive, scroll-animated experiences with WebGL and motion design that make your brand impossible to scroll past.</p></div>
-                <div class="service neu reveal" data-delay="2"><div class="ico"><i class="fas fa-magnifying-glass-chart"></i></div><h3>SEO &amp; Marketing</h3><p>Boost your visibility and attract organic traffic. I optimize your site and content to climb search rankings and reach your audience.</p></div>
+                <div class="service wide reveal" data-delay="1"><div class="ico"><i class="fas fa-laptop-code"></i></div><div class="svc-text"><h3>Web Development</h3><p>Professional, scalable websites that showcase your brand and achieve your online goals.</p></div></div>
+                <div class="service reveal" data-delay="2"><div class="ico"><i class="fas fa-mobile-screen-button"></i></div><h3>Mobile Apps</h3><p>Sleek, intuitive cross-platform apps built with .NET MAUI and modern tooling.</p></div>
+                <div class="service reveal" data-delay="3"><div class="ico"><i class="fas fa-cube"></i></div><h3>3D &amp; Interactive</h3><p>Immersive, animated web experiences that make your brand impossible to scroll past.</p></div>
+                <div class="service wide reveal" data-delay="4"><div class="ico"><i class="fas fa-magnifying-glass-chart"></i></div><div class="svc-text"><h3>SEO &amp; Marketing</h3><p>Boost visibility and attract organic traffic with data-driven optimization.</p></div></div>
             </div>
         </div>
     </section>
 
-    <!-- Projects -->
-    <section class="section" id="project">
+    <!-- Work -->
+    <section class="section page" id="work">
         <div class="container">
             <div class="center-head reveal">
                 <span class="eyebrow">Portfolio</span>
-                <h2 class="section-title">Featured Projects</h2>
+                <h2 class="section-title">Featured Work</h2>
                 <p class="section-lead">A selection of products I've designed and shipped.</p>
             </div>
-            <div class="projects-grid">
-                <div class="project reveal" data-delay="1"><div class="pimg"><img src="img/project-1.png" alt="AI International School">
-                    <div class="overlay"><span class="tag">WEB</span><h4>AI International School</h4>
-                        <div class="links"><a href="img/project-1.png" target="_blank" aria-label="View"><i class="fas fa-eye"></i></a><a href="https://www.aiinternationalschool.com" target="_blank" aria-label="Visit"><i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div></div>
-                <div class="project reveal" data-delay="2"><div class="pimg"><img src="img/project-2.png" alt="Aries Tokyo">
-                    <div class="overlay"><span class="tag">E-COMMERCE</span><h4>Aries Tokyo</h4>
-                        <div class="links"><a href="img/project-2.png" target="_blank" aria-label="View"><i class="fas fa-eye"></i></a><a href="https://www.ariestokyo.com" target="_blank" aria-label="Visit"><i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div></div>
-                <div class="project reveal" data-delay="3"><div class="pimg"><img src="img/project-3.png" alt="Veg Mantra Store">
-                    <div class="overlay"><span class="tag">E-COMMERCE</span><h4>Veg Mantra Store</h4>
-                        <div class="links"><a href="img/project-3.png" target="_blank" aria-label="View"><i class="fas fa-eye"></i></a><a href="https://vegmantrastore.com" target="_blank" aria-label="Visit"><i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div></div>
-                <div class="project reveal" data-delay="1"><div class="pimg"><img src="img/project-4.png" alt="Japan Jewelry Company">
-                    <div class="overlay"><span class="tag">WEB</span><h4>Japan Jewelry Company</h4>
-                        <div class="links"><a href="img/project-4.png" target="_blank" aria-label="View"><i class="fas fa-eye"></i></a><a href="https://www.japanjewelrycompany.com" target="_blank" aria-label="Visit"><i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div></div>
-                <div class="project reveal" data-delay="2"><div class="pimg"><img src="img/project-5.png" alt="Wee Green">
-                    <div class="overlay"><span class="tag">WEB</span><h4>Wee Green</h4>
-                        <div class="links"><a href="img/project-5.png" target="_blank" aria-label="View"><i class="fas fa-eye"></i></a><a href="https://wee.green" target="_blank" aria-label="Visit"><i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div></div>
-                <div class="project reveal" data-delay="3"><div class="pimg"><img src="img/project-6.jpg" alt="More work">
-                    <div class="overlay"><span class="tag">COMING SOON</span><h4>More on the way</h4>
-                        <div class="links"><a href="#contact" aria-label="Contact"><i class="fas fa-plus"></i></a></div></div></div></div>
+            <div class="astack-wrap reveal" data-delay="1">
+                <div class="astack" id="astack">
+                    <article class="acard">
+                        <div class="acard-media" style="background:linear-gradient(135deg,#0e2a47,#0a0f1e);"><img src="https://stvidstrg25.blob.core.windows.net/skilltechimages/Skilltech-website-banner.webp" alt="SkillTech Club" loading="lazy" onerror="this.style.opacity=0"></div>
+                        <div class="acard-foot">
+                            <div class="acard-info"><h4>SkillTech Club</h4><span>EdTech &middot; Azure &amp; AI</span></div>
+                            <a class="acard-read" href="https://skilltech.club/" target="_blank" rel="noopener">Read <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="acard">
+                        <div class="acard-media"><img src="img/project-1.png" alt="AI International School"></div>
+                        <div class="acard-foot">
+                            <div class="acard-info"><h4>AI International School</h4><span>Web</span></div>
+                            <a class="acard-read" href="https://www.aiinternationalschool.com" target="_blank" rel="noopener">Read <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="acard">
+                        <div class="acard-media"><img src="img/project-2.png" alt="Aries Tokyo"></div>
+                        <div class="acard-foot">
+                            <div class="acard-info"><h4>Aries Tokyo</h4><span>E-commerce</span></div>
+                            <a class="acard-read" href="https://www.ariestokyo.com" target="_blank" rel="noopener">Read <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="acard">
+                        <div class="acard-media"><img src="img/project-3.png" alt="Veg Mantra Store"></div>
+                        <div class="acard-foot">
+                            <div class="acard-info"><h4>Veg Mantra Store</h4><span>E-commerce</span></div>
+                            <a class="acard-read" href="https://vegmantrastore.com" target="_blank" rel="noopener">Read <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="acard">
+                        <div class="acard-media"><img src="img/project-4.png" alt="Japan Jewelry Company"></div>
+                        <div class="acard-foot">
+                            <div class="acard-info"><h4>Japan Jewelry Company</h4><span>Web</span></div>
+                            <a class="acard-read" href="https://www.japanjewelrycompany.com" target="_blank" rel="noopener">Read <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="acard">
+                        <div class="acard-media"><img src="img/project-5.png" alt="Wee Green"></div>
+                        <div class="acard-foot">
+                            <div class="acard-info"><h4>Wee Green</h4><span>Web</span></div>
+                            <a class="acard-read" href="https://wee.green" target="_blank" rel="noopener">Read <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="acard">
+                        <div class="acard-media"><img src="img/project-6.jpg" alt="More work"></div>
+                        <div class="acard-foot">
+                            <div class="acard-info"><h4>More on the way</h4><span>Coming soon</span></div>
+                            <a class="acard-read" href="#contact">Contact <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+                <button class="astack-btn" id="astackBtn">Next <i class="fas fa-arrow-right"></i></button>
             </div>
         </div>
     </section>
 
     <!-- Testimonials -->
-    <section class="section" id="testimonial">
-        <div class="container">
-            <div class="center-head reveal">
-                <span class="eyebrow">Testimonials</span>
-                <h2 class="section-title">What clients say</h2>
+    <section class="section page" id="testimonial">
+        <div class="container tsl">
+            <div class="tsl-meta reveal">
+                <div class="tsl-count"><span id="tslCur">01</span> <span class="sl">/</span> <span id="tslTotal">03</span></div>
+                <div class="tsl-label">Reviews</div>
             </div>
-            <div class="tcarousel neu reveal" data-delay="1">
-                <div class="ttrack">
-                    <div class="tslides" id="tslides">
-                        <div class="tslide">
-                            <div class="quote"><i class="fas fa-quote-left"></i></div>
-                            <p>Amit is super supportive in his work. If you ask him to work on a project, he delivers it in no time. Very reliable and resourceful for .NET, MVC, and MS SQL design and development. Highly recommend his work.</p>
-                            <div class="who"><img src="img/testimonial-1.jpg" alt="Arti Rupda"><h4>Arti Rupda</h4><span>CEO, ARKIT | Japan Jewelry Company</span></div>
-                        </div>
-                        <div class="tslide">
-                            <div class="quote"><i class="fas fa-quote-left"></i></div>
-                            <p>Amit is very knowledgeable in what he does. We had many concurrent projects and Amit delivered them all promptly. I really appreciate his professional work.</p>
-                            <div class="who"><img src="img/testimonial-2.jpg" alt="Ryan Phoeng"><h4>Ryan Phoeng</h4><span>PSM, PSPO</span></div>
-                        </div>
-                        <div class="tslide">
-                            <div class="quote"><i class="fas fa-quote-left"></i></div>
-                            <p>Amit is genuinely encouraging in his work. He works swiftly and efficiently on any project. Extremely trustworthy and creative for design and development tasks. Strongly suggest his work.</p>
-                            <div class="who"><img src="img/testimonial-3.jpg" alt="Jayeshkumar Dangruchiya"><h4>Jayeshkumar Dangruchiya</h4><span>Digital Devices Expert</span></div>
-                        </div>
-                    </div>
+            <div class="tsl-stage reveal left">
+                <div class="tsl-photo"><img id="tslImg" src="img/testimonial-1.jpg" alt="Arti Rupda"></div>
+                <div class="tsl-thumbs" id="tslThumbs">
+                    <button class="tsl-thumb active" data-i="0" aria-label="Show Arti Rupda"><img src="img/testimonial-1.jpg" alt="Arti Rupda"></button>
+                    <button class="tsl-thumb" data-i="1" aria-label="Show Ryan Phoeng"><img src="img/testimonial-2.jpg" alt="Ryan Phoeng"></button>
+                    <button class="tsl-thumb" data-i="2" aria-label="Show Jayeshkumar Dangruchiya"><img src="img/testimonial-3.jpg" alt="Jayeshkumar Dangruchiya"></button>
                 </div>
-                <div class="tnav">
-                    <button class="tarrow" id="tprev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-                    <div class="tdots" id="tdots"></div>
-                    <button class="tarrow" id="tnext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="tsl-body reveal right">
+                <div class="tsl-text" id="tslText">
+                    <div class="tsl-role" id="tslRole">CEO, ARKIT | Japan Jewelry Company</div>
+                    <h3 class="tsl-name" id="tslName">Arti Rupda</h3>
+                    <p class="tsl-quote" id="tslQuote">"Amit is super supportive in his work. If you ask him to work on a project, he delivers it in no time. Very reliable and resourceful for .NET, MVC, and MS SQL. Highly recommend his work."</p>
+                </div>
+                <div class="tsl-nav">
+                    <button class="tsl-arrow" id="tslPrev" aria-label="Previous review"><i class="fas fa-arrow-left"></i></button>
+                    <button class="tsl-arrow active" id="tslNext" aria-label="Next review"><i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section class="section" id="contact">
+    <section class="section page" id="contact">
         <div class="container">
             <div class="center-head reveal">
                 <span class="eyebrow">Get in touch</span>
-                <h2 class="section-title">Let's Work Together</h2>
+                <h2 class="section-title">Let's work together</h2>
                 <p class="section-lead">Have a project in mind? I'd love to hear about it.</p>
             </div>
             <div class="contact-grid">
-                <div class="contact-info reveal left">
-                    <div class="ci"><div class="ico"><i class="fas fa-phone"></i></div><div><small>CALL ME</small><strong>+91 90330 00792</strong></div></div>
-                    <a class="ci" href="mailto:destinyofamit@gmail.com"><div class="ico"><i class="fas fa-envelope"></i></div><div><small>MAIL ME</small><strong>destinyofamit@gmail.com</strong></div></a>
-                    <div class="ci" style="border:none;"><div class="ico"><i class="fas fa-share-nodes"></i></div><div><small>FOLLOW ME</small>
+                <div class="reveal left">
+                    <div class="ci"><div class="ico"><i class="fas fa-phone"></i></div><div><small>Call me</small><strong>+91 90330 00792</strong></div></div>
+                    <a class="ci" href="mailto:destinyofamit@gmail.com"><div class="ico"><i class="fas fa-envelope"></i></div><div><small>Mail me</small><strong>destinyofamit@gmail.com</strong></div></a>
+                    <div class="ci" style="border:none;"><div class="ico"><i class="fas fa-share-nodes"></i></div><div><small>Follow me</small>
                         <div class="footer-socials" style="margin:8px 0 0;justify-content:flex-start;">
                             <a href="https://www.linkedin.com/in/amit-tiwari-71b07919/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                             <a href="https://destinyofamit.blogspot.com/" target="_blank" aria-label="Blog"><i class="fab fa-blogger-b"></i></a>
                         </div></div></div>
                 </div>
-                <form class="form-card neu reveal right" id="contactForm" action="https://formsubmit.co/destinyofamit@gmail.com" method="POST">
+                <form class="form-card reveal right" id="contactForm" action="https://formsubmit.co/destinyofamit@gmail.com" method="POST">
                     <div class="form-row">
                         <div class="field"><input type="text" name="name" placeholder="Your name" required></div>
                         <div class="field"><input type="email" name="email" placeholder="Your email" required></div>
                     </div>
                     <div class="field"><input type="text" name="subject" placeholder="Subject"></div>
                     <div class="field"><textarea name="message" placeholder="Tell me about your project..." required></textarea></div>
-                    <!-- FormSubmit config (works on static hosts like GitHub Pages) -->
                     <input type="hidden" name="_subject" value="New message from your portfolio">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
@@ -279,31 +295,22 @@
                     <p class="form-status" id="formStatus" role="status" aria-live="polite">// I usually reply within 24 hours.</p>
                 </form>
             </div>
+            <footer class="footer">
+                <a href="#home" class="brand"><span class="logo">AT</span> Amit<span class="logo-dot">.</span></a>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/amit-tiwari-71b07919/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://destinyofamit.blogspot.com/" target="_blank" aria-label="Blog"><i class="fab fa-blogger-b"></i></a>
+                    <a href="mailto:destinyofamit@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p>&copy; <span id="year"></span> Amit Tiwari. All rights reserved.</p>
+            </footer>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <a href="#home" class="brand"><span class="logo">AT</span> Amit Tiwari</a>
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/amit-tiwari-71b07919/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://destinyofamit.blogspot.com/" target="_blank" aria-label="Blog"><i class="fab fa-blogger-b"></i></a>
-                <a href="mailto:destinyofamit@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
-            <p>&copy; <span id="year"></span> Amit Tiwari. All rights reserved. Built with Three.js, Lenis &amp; a lot of care.</p>
-        </div>
-    </footer>
-
     <button class="to-top" id="toTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
-    <!-- Libraries (CDN — static, GitHub-Pages friendly) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-
-    <!-- App scripts -->
-    <script src="js/three-hero.js"></script>
-    <script src="js/premium.js"></script>
+    <script src="js/v2.js"></script>
 </body>
 
 </html>
