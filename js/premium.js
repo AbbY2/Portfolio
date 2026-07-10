@@ -21,7 +21,7 @@
     root.setAttribute('data-theme', mode);
     if (toggle) toggle.innerHTML = mode === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     var meta = $('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', mode === 'dark' ? '#0c0d14' : '#6d5dfc');
+    if (meta) meta.setAttribute('content', mode === 'dark' ? '#0c0d14' : '#f13024');
     if (window.__threeHero) window.__threeHero.setTheme(mode);
   }
   if (toggle) toggle.addEventListener('click', function () {

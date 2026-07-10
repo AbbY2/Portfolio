@@ -29,14 +29,14 @@
 
   var geo = new THREE.IcosahedronGeometry(1.7, 1);
   var mat = new THREE.MeshStandardMaterial({
-    color: 0x6d5dfc, roughness: 0.28, metalness: 0.65, flatShading: true
+    color: 0xf13024, roughness: 0.28, metalness: 0.65, flatShading: true
   });
   var mesh = new THREE.Mesh(geo, mat);
   group.add(mesh);
 
   var wire = new THREE.LineSegments(
     new THREE.WireframeGeometry(geo),
-    new THREE.LineBasicMaterial({ color: 0xb14dff, transparent: true, opacity: 0.45 })
+    new THREE.LineBasicMaterial({ color: 0xff6a3d, transparent: true, opacity: 0.45 })
   );
   mesh.add(wire);
 
@@ -66,8 +66,8 @@
   // ---- lights ----
   scene.add(new THREE.AmbientLight(0xffffff, 0.55));
   var key = new THREE.DirectionalLight(0xff7a59, 1.3); key.position.set(5, 5, 5); scene.add(key);
-  var fill = new THREE.DirectionalLight(0x6d5dfc, 1.1); fill.position.set(-6, -3, 2); scene.add(fill);
-  var rim = new THREE.PointLight(0xb14dff, 1.2, 30); rim.position.set(0, 2, 6); scene.add(rim);
+  var fill = new THREE.DirectionalLight(0xff6a3d, 1.1); fill.position.set(-6, -3, 2); scene.add(fill);
+  var rim = new THREE.PointLight(0xff8a3d, 1.2, 30); rim.position.set(0, 2, 6); scene.add(rim);
 
   // ---- state ----
   var progress = 0;             // 0..1 across the hero scroll
@@ -126,7 +126,7 @@
     camera.position.z = 6 + p * 2.5;
 
     // morph accent color as you scroll (indigo -> violet)
-    color.setHSL(0.70 - p * 0.08, 0.72, 0.6);
+    color.setHSL(0.02 + p * 0.04, 0.85, 0.55);
     mat.color.copy(color);
 
     points.rotation.y = t * 0.035;
